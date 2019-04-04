@@ -73,8 +73,10 @@ How to use multipart/form-data in swift
   <pre>
   
   func didSCHTTPFinished(data: Data?, response: URLResponse?, error: Error?) {
-         if let jsonString = String(data: data!, encoding: String.Encoding.utf8){
+        
+        if let jsonString = String(data: data!, encoding: String.Encoding.utf8){
          print(jsonString)
+         
       }
     }
   
