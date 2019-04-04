@@ -35,7 +35,7 @@ How to use multipart/form-data in swift
   <h1>How to get start</h1>
   Put "SCHTTP. Swift" in your project
  
- <code>
+ (```)
    let request = SCHTTP()
         request.url = "https://stanserver.cn/http/DaoUserXML/addUser.do"
         request.parameter = [
@@ -61,9 +61,8 @@ How to use multipart/form-data in swift
              data:img2)
         ]
         request.star(request:request)
-        request.SCHTTPDelegate = self
-        
- </code>       
+        request.SCHTTPDelegate = self    
+(```)     
         
         
   
