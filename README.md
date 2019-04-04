@@ -1,6 +1,8 @@
 # swift-multipart-form-data
-How to use multipart/form-data in swift
+<h1>How to use multipart/form-data in swift</h1>
 
+
+ <h3>说明</h3>
  这个是一个HTTP发送文件的类
  按照HTTP发送文件格式用 “swift”拼接然后发送
  HTTP 文件发送的格式和普通的字符串发送，最大的区别就是有一个自定义的分割符号
