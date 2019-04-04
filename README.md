@@ -33,7 +33,7 @@ How to use multipart/form-data in swift
   
   
   <h1>How to get start</h1>
-  Put "SCHTTP. Swift" in your project
+  <h5>Put "SCHTTP. Swift" in your project</h5>
  
 <pre>
    let request = SCHTTP()
@@ -68,7 +68,19 @@ How to use multipart/form-data in swift
         request.SCHTTPDelegate = self    
 </pre>    
         
-        
+  <h1>How to get Return data</h1>        
+  <h5>Yow wille get data in SCHTTPDelegate</h5>
+  <pre>
   
+  func didSCHTTPFinished(data: Data?, response: URLResponse?, error: Error?) {
+  
+  if let jsonString = String(data: data!, encoding: String.Encoding.utf8){
+  print(jsonString)
+  
+  }
+  
+  }
+  
+  </pre>
   
   
