@@ -21,7 +21,8 @@ How to use multipart/form-data in swift
  HTTP files are sent in a format that is different from regular strings in that they have a custom split symbol
  To separate the different sending parts
  
- Attention please
+
+ <h3>Attention please</h3>
  The parameters in this class are set very strictly if you want to send a string
  MediaType.String
  The pear must have two arguments, "name" and "sentStr"
