@@ -16,6 +16,11 @@ How to use multipart/form-data in swift
  
  
  
+ 
+ 
+ 
+ 
+ 
  This is a class that sends files over HTTP
  Send file format as HTTP with “swift” splicing and then send
  HTTP files are sent in a format that is different from regular strings in that they have a custom split symbol
