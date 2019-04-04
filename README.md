@@ -6,7 +6,7 @@ How to use multipart/form-data in swift
  HTTP 文件发送的格式和普通的字符串发送，最大的区别就是有一个自定义的分割符号
  来分割不同的发送部分，
  
- 请注意
+ <h3>请注意</h3>
  本类中参数的设置非常严格，如果你要发送字符串
  MediaType.String
  参数梨必须有两个参数 name 和 sentStr
