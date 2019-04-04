@@ -70,10 +70,10 @@ How to use multipart/form-data in swift
         
   <h1>How to get Return data</h1>        
   <h5>Yow wille get data in SCHTTPDelegate</h5>
-  <pre>
   
+  <pre>
   func didSCHTTPFinished(data: Data?, response: URLResponse?, error: Error?) {
-        
+  
         if let jsonString = String(data: data!, encoding: String.Encoding.utf8){
          print(jsonString)
          
