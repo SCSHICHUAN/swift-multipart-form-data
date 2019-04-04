@@ -35,25 +35,29 @@ How to use multipart/form-data in swift
   <h1>How to get start</h1>
   Put "SCHTTP. Swift" in your project
  
- (```)
+<pre>
    let request = SCHTTP()
         request.url = "https://stanserver.cn/http/DaoUserXML/addUser.do"
         request.parameter = [
+        
             (name:"username",
              fileName:nil,
              mediaType:SCHTTP.MediaType.String,
              string:"马云",
              data:nil),
+             
             (name:"password",
              fileName:nil,
              mediaType:SCHTTP.MediaType.String,
              string:"15454454545",
              data:nil),
+             
             (name:"name",
              fileName:"picture1",
              mediaType:SCHTTP.MediaType.File,
              string:nil,
              data:img1)
+             
             (name:"name",
              fileName:"picture2",
              mediaType:SCHTTP.MediaType.File,
@@ -62,7 +66,7 @@ How to use multipart/form-data in swift
         ]
         request.star(request:request)
         request.SCHTTPDelegate = self    
-(```)     
+</pre>    
         
         
   
