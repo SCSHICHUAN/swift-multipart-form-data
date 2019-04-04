@@ -12,6 +12,8 @@
 		E3F3679A22559D4100C1FD92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F3679822559D4100C1FD92 /* Main.storyboard */; };
 		E3F3679C22559D4200C1FD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F3679B22559D4200C1FD92 /* Assets.xcassets */; };
 		E3F3679F22559D4200C1FD92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F3679D22559D4200C1FD92 /* LaunchScreen.storyboard */; };
+		E3F367A922559E7D00C1FD92 /* org.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F367A822559E7D00C1FD92 /* org.swift */; };
+		E3F367AB22559EB300C1FD92 /* SCHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F367AA22559EB300C1FD92 /* SCHTTP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E3F3679B22559D4200C1FD92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F3679E22559D4200C1FD92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3F367A022559D4200C1FD92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3F367A822559E7D00C1FD92 /* org.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = org.swift; sourceTree = "<group>"; };
+		E3F367AA22559EB300C1FD92 /* SCHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCHTTP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		E3F3679322559D4100C1FD92 /* SCHTTPDome */ = {
 			isa = PBXGroup;
 			children = (
-				E3F3679422559D4100C1FD92 /* AppDelegate.swift */,
+				E3F367AA22559EB300C1FD92 /* SCHTTP.swift */,
 				E3F3679622559D4100C1FD92 /* ViewController.swift */,
+				E3F367AC22559F0600C1FD92 /* other */,
+			);
+			path = SCHTTPDome;
+			sourceTree = "<group>";
+		};
+		E3F367AC22559F0600C1FD92 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				E3F3679422559D4100C1FD92 /* AppDelegate.swift */,
 				E3F3679822559D4100C1FD92 /* Main.storyboard */,
 				E3F3679B22559D4200C1FD92 /* Assets.xcassets */,
 				E3F3679D22559D4200C1FD92 /* LaunchScreen.storyboard */,
 				E3F367A022559D4200C1FD92 /* Info.plist */,
+				E3F367A822559E7D00C1FD92 /* org.swift */,
 			);
-			path = SCHTTPDome;
+			path = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +110,7 @@
 				TargetAttributes = {
 					E3F3679022559D4100C1FD92 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -135,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F367A922559E7D00C1FD92 /* org.swift in Sources */,
+				E3F367AB22559EB300C1FD92 /* SCHTTP.swift in Sources */,
 				E3F3679722559D4100C1FD92 /* ViewController.swift in Sources */,
 				E3F3679522559D4100C1FD92 /* AppDelegate.swift in Sources */,
 			);
@@ -282,17 +299,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84JV8F36TK;
-				INFOPLIST_FILE = SCHTTPDome/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SCHTTPDome/other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SHICHUAN.SCHTTPDome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -300,17 +321,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84JV8F36TK;
-				INFOPLIST_FILE = SCHTTPDome/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SCHTTPDome/other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SHICHUAN.SCHTTPDome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

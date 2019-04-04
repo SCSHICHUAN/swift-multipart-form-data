@@ -10,7 +10,7 @@ import Foundation
 
 func http() -> () {
     
-    var resqut = URLRequest(url: URL(string: "http://localhost:8080/travel/DaoUserXML/addUser.do")!)
+    var resqut = URLRequest(url: URL(string: "https://stanserver.cn/http/DaoUserXML/addUser.do")!)
     
     
     resqut.httpMethod = "POST"
