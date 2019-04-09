@@ -278,7 +278,60 @@ public class SCHTTP:NSObject,Error,URLSessionTaskDelegate{
     }
     
     
-    
+    /*
+     HTTPS 验证文件的处理
+     HTTPS validates file processing
+     */
+    public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
+    {
+        print("urlSession")
+        
+        let path = Bundle.main.path(forResource: "certificate", ofType: "cer");
+        let url = URL(fileURLWithPath: path!)
+        do {
+            
+            let localCertificateData = try Data(contentsOf: url)
+            
+            if let serverTrust = challenge.protectionSpace.serverTrust,
+                let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0) {
+                let remoteCertificateData: Data = SecCertificateCopyData(certificate) as Data
+                
+                print("remoteCertificateData:\(remoteCertificateData.base64EncodedString())")
+                print("localCertificateData:\(localCertificateData.base64EncodedString())")
+                
+                
+                /*
+                 证书校验：这里直接比较本地证书文件内容 和 服务器返回的证书文件内容
+                 Certificate validation: this directly compares the contents of the local certificate file with the contents of the certificate file returned by the server
+                 */
+                if localCertificateData as Data == remoteCertificateData {
+                    
+                    let credential = URLCredential(trust: serverTrust)
+                    challenge.sender?.use(credential, for: challenge)
+                    /*
+                     证书校验通过
+                     Certificate verified
+                     */
+                    print("Certificate verified")
+                    completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential, credential)
+                } else {
+                    challenge.sender?.cancel(challenge)
+                    
+                    /*
+                     证书校验不通过
+                     The certificate does not pass the check
+                     */
+                    print("The certificate does not pass the check")
+                    completionHandler(Foundation.URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
+                }
+            } else {
+                // could not tested
+                print("Pitaya: Get RemoteCertificateData or LocalCertificateData error!")
+            }
+        }catch{
+            
+        }
+    }
     
     
     
