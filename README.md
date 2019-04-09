@@ -278,14 +278,35 @@ public class SCHTTP:NSObject,Error,URLSessionTaskDelegate{
     }
     
     
-    /*
+     /*
      HTTPS 验证文件的处理
      HTTPS validates file processing
      */
     public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
     {
         print("urlSession")
+       
         
+        
+        
+        
+        
+        /*
+         如果你想自己做HTTPS的验证可以把这return句话注释掉
+         If you want to do your own HTTPS validation you can comment out the return statement
+         */
+        return completionHandler(Foundation.URLSession.AuthChallengeDisposition.useCredential, URLCredential())
+        
+        
+        
+        
+        
+        
+        
+        /*
+         HTTPS验证服务器
+         HTTPS authentication server
+         */
         let path = Bundle.main.path(forResource: "certificate", ofType: "cer");
         let url = URL(fileURLWithPath: path!)
         do {
@@ -332,7 +353,6 @@ public class SCHTTP:NSObject,Error,URLSessionTaskDelegate{
             
         }
     }
-    
     
     
     
